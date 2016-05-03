@@ -15,7 +15,7 @@ var makeMasterdogDiv = function() {
 
 var makeMastercatDiv = function() {
   let masterDiv = document.createElement("div");
-  masterDiv.className = "masterdiv col-xs-6";
+  masterDiv.className = "masterdiv col-xs-6 cat";
   catContentDiv.appendChild(masterDiv);
   return masterDiv;
 }

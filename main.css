@@ -10,6 +10,9 @@ header {
   border-radius: 8px;
 }
 
+.cat {
+  height: 330px;
+}
 .masterdiv h4 {
   text-align: center;
 }
