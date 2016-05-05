@@ -52,20 +52,20 @@ var createdogcard = function() {
   //loop one: create master div with brand title.
   dogFood.dog_brands.forEach(function(brand, brandindex){
     masterDiv = makeMasterdogDiv();
-    console.log("brand of dog food", dogFood.dog_brands[brandindex].name );
-    masterDiv.innerHTML = `<h4 class = "brandname">${dogFood.dog_brands[brandindex].name}</h4>`;
+    console.log("brand of dog food", brand.name );
+    masterDiv.innerHTML = `<h4 class = "brandname">${brand.name}</h4>`;
   
     //loop two (nested): create type div with title.
-    dogFood.dog_brands[brandindex].types.forEach(function(type, typeindex) {
+    brand.types.forEach(function(type, typeindex) {
       typeDiv = makeTypeDiv();
-      console.log("type of dog food", dogFood.dog_brands[brandindex].types[typeindex].type);
-      typeDiv.innerHTML = `<p class="foodtype">${dogFood.dog_brands[brandindex].types[typeindex].type}</p>`
+      console.log("type of dog food", type.type);
+      typeDiv.innerHTML = `<p class="foodtype">${type.type}</p>`
       
       //loop three (nested): create volume/price div function. 
-      dogFood.dog_brands[brandindex].types[typeindex].volumes.forEach(function(volume, volumeindex){
+      type.volumes.forEach(function(volume, volumeindex){
         volumeDiv = makeVolumeDiv();
-        console.log("volume name", dogFood.dog_brands[brandindex].types[typeindex].volumes[volumeindex].name );
-        volumeDiv.innerHTML = `Size: ${dogFood.dog_brands[brandindex].types[typeindex].volumes[volumeindex].name};  Price: ${dogFood.dog_brands[brandindex].types[typeindex].volumes[volumeindex].price}`
+        console.log("volume name", volume.name );
+        volumeDiv.innerHTML = `Size: ${volume.name};  Price: ${volume.price}`
       });
     });
   });
@@ -96,27 +96,27 @@ console.log("cat food loaded");
   //loop one: create master div with brand title.
   catFood.cat_brands.forEach(function(brand, brandindex){
     masterDiv = makeMastercatDiv();
-    console.log("brand of cat food", catFood.cat_brands[brandindex].name );
-    masterDiv.innerHTML = `<h4 class = "brandname">${catFood.cat_brands[brandindex].name}</h4>`;
+    console.log("brand of cat food", brand.name );
+    masterDiv.innerHTML = `<h4 class = "brandname">${brand.name}</h4>`;
     
     //first nested loop within master div: cat breeds. no subloops. note I used CSS to add the semicolon to all but the last item in this loop. 
     breedDiv = makeBreedDiv();
-    catFood.cat_brands[brandindex].breeds.forEach(function(breed, breedindex){
-      console.log("cat breed", catFood.cat_brands[brandindex].breeds[breedindex]);
-      breedDiv.innerHTML += `<span class="abreed">${catFood.cat_brands[brandindex].breeds[breedindex]}</span>`
+    brand.breeds.forEach(function(breed, breedindex){
+      console.log("cat breed", breed);
+      breedDiv.innerHTML += `<span class="abreed">${breed}</span>`
     });
 
     //second nested loop within master div: create type div with title.
-    catFood.cat_brands[brandindex].types.forEach(function(type, typeindex) {
+    brand.types.forEach(function(type, typeindex) {
       typeDiv = makeTypeDiv();
-      console.log("type of cat food", catFood.cat_brands[brandindex].types[typeindex].type);
-      typeDiv.innerHTML = `<p class="foodtype">${catFood.cat_brands[brandindex].types[typeindex].type}</p>`
+      console.log("type of cat food", type.type);
+      typeDiv.innerHTML = `<p class="foodtype">${type.type}</p>`
       
       //loop three (nested): create volume/price div function. 
-      catFood.cat_brands[brandindex].types[typeindex].volumes.forEach(function(volume, volumeindex){
+      type.volumes.forEach(function(volume, volumeindex){
         volumeDiv = makeVolumeDiv();
-        console.log("volume name", catFood.cat_brands[brandindex].types[typeindex].volumes[volumeindex].name );
-        volumeDiv.innerHTML = `Size: ${catFood.cat_brands[brandindex].types[typeindex].volumes[volumeindex].name};  Price: ${catFood.cat_brands[brandindex].types[typeindex].volumes[volumeindex].price}`
+        console.log("volume name", volume.name );
+        volumeDiv.innerHTML = `Size: ${volume.name};  Price: ${volume.price}`
       });
     });
   });
