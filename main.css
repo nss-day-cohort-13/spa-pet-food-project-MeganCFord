@@ -1,0 +1,33 @@
+header {
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+.petfoodtitle {
+  text-align: center;
+}
+.masterdiv {
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.cat {
+  height: 330px;
+}
+.masterdiv h4 {
+  text-align: center;
+}
+
+p.foodtype {
+  border-bottom: 1px solid black;
+}
+
+
+.breedDiv {
+  border: 1px solid red;
+  padding: 5px;
+}
+
+.abreed:not(:last-of-type):after {
+  content: "; "
+
+}
